@@ -11,7 +11,6 @@ public class Crtl_Objetivos_lvl2 : MonoBehaviour
 
     private float contador_descuento;
     private static Crtl_Objetivos_lvl2 instance;
-
     private float tiempo_lim_obj1;
     public static Text tiempo_limite;
     public static Text puntaje_total;
@@ -21,7 +20,6 @@ public class Crtl_Objetivos_lvl2 : MonoBehaviour
     private globo_spawn_lvl2 spawner;
     public int Puntaje_t;
     public float contador_velocidad;
-    public Button boton_siguiente_lvl;
     public float tiempo_entre_globos;
     public float contador_tiempo_entre_globos;
     public float velocidadobjetivo;
@@ -74,9 +72,6 @@ public class Crtl_Objetivos_lvl2 : MonoBehaviour
        // Puntos_obj_1 = 15; //PUNTOS DEL OBJETIVO1
        // iluminacionActual = 0;
        // iluminacion_objetivo = 25;
-        boton_siguiente_lvl.interactable = false;
-        boton_siguiente_lvl.GetComponent<Image>().color = new Color32(255,255,255,0);
-        
     }
 
     public static Crtl_Objetivos_lvl2 getInstance()
@@ -119,9 +114,8 @@ public class Crtl_Objetivos_lvl2 : MonoBehaviour
 
                 if (tiempo_lim_obj1 <= 0)  //CUMPLO OBJETIVO 
               {
-                 boton_siguiente_lvl.interactable = true;
-                 boton_siguiente_lvl.GetComponent<Image>().color = new Color32(255,255,255,255);     //Instanciar el boton (ir a menu)
-                 Destroy(tmp_limite_show);   //sacar el contador
+               
+                  ctr.desbloquearNivel();   
                }
 
 

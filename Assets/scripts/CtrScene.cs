@@ -35,7 +35,6 @@ public class CtrScene : MonoBehaviour
     public void desbloquearNivel() {
         NivelActual++;
         if (NivelesDesbloqueado < NivelActual) {
-
             NivelesDesbloqueado = NivelActual;
         }     
         VolverMenu();
