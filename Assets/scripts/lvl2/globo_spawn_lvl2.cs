@@ -29,6 +29,7 @@ public class globo_spawn_lvl2 : MonoBehaviour
 
     // Update is called once per frame
     public void setTiempoEntreGlobos(float tiempo){
+        Debug.Log("tiempo entre globos " + tiempo.ToString());
         tiempo_entre_globo = tiempo;
     }
     

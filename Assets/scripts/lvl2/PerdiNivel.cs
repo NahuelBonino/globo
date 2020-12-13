@@ -7,6 +7,7 @@ public class PerdiNivel : MonoBehaviour
     // Start is called before the first frame update
     
     private Crtl_Objetivos_lvl2 ctrl2;    
+    
     void Start()
     {
         ctrl2 = GameObject.Find("CtrlObjetivo").GetComponent(typeof(Crtl_Objetivos_lvl2)) as Crtl_Objetivos_lvl2;
@@ -19,10 +20,9 @@ public class PerdiNivel : MonoBehaviour
     }
 
 
-    void onCollision2D(Collision col){
-
+    void OnTriggerEnter2D(Collider2D col){
+        Debug.Log("GameObject1 collided with " + col.name);
         ctrl2.Fail();
-
     }
 
 

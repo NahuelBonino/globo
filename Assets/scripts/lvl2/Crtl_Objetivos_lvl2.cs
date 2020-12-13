@@ -13,7 +13,6 @@ public class Crtl_Objetivos_lvl2 : MonoBehaviour
     private static Crtl_Objetivos_lvl2 instance;
     private float tiempo_lim_obj1;
     public static Text tiempo_limite;
-    public static Text puntaje_total;
     public static Text  tmp_limite_show;
     public static CtrScene ctr;
     public int currentObj;
@@ -46,8 +45,7 @@ public class Crtl_Objetivos_lvl2 : MonoBehaviour
         spawner =  GameObject.Find("spawner").GetComponent(typeof(globo_spawn_lvl2)) as globo_spawn_lvl2;
         spawner.SetVelocidadGlobo(velocidadobjetivo);
 
-        puntaje_total = GameObject.Find("puntajeTotal").GetComponent(typeof(Text)) as Text;
-
+       
         tmp_limite_show = GameObject.Find("tmp_limite").GetComponent(typeof(Text)) as Text;
 
         
@@ -63,8 +61,8 @@ public class Crtl_Objetivos_lvl2 : MonoBehaviour
        // Puntaje_violeta = 0;
         currentObj = 1; // OBJETIVO ACTUAL 1
         //contador_obj2 = 0;
-        tiempo_lim_obj1 = 10.0f; // TIEMPO LIMITE DEL OBJETIVO 2
-        Puntaje_t = 0;
+        tiempo_lim_obj1 = 150.0f; // TIEMPO LIMITE DEL OBJETIVO 2
+     
         contador_velocidad = 0f;
         velocidadobjetivo = 1.0f;
         tmp_limite_show.text = tmp_limite_show.ToString();
@@ -82,21 +80,21 @@ public class Crtl_Objetivos_lvl2 : MonoBehaviour
     private void Update()
     {
             //BAJO EL CONTADOR DEL OBJETIVO 2
-      
+          
             tiempo_lim_obj1  -=  Time.deltaTime;
            
             contador_descuento += Time.deltaTime;
                                     
             contador_velocidad = contador_velocidad + Time.deltaTime;
 
-            contador_tiempo_entre_globos = contador_velocidad + Time.deltaTime;
+            contador_tiempo_entre_globos = contador_tiempo_entre_globos + Time.deltaTime;
 
             if(tmp_limite_show != null)
                tmp_limite_show.text = Math.Round(tiempo_lim_obj1).ToString();
 
-            if(contador_velocidad >= 5.0f){
+            if(contador_velocidad >= 3.0f){
 
-              velocidadobjetivo = velocidadobjetivo + 0.05f;  
+              velocidadobjetivo = velocidadobjetivo + 0.06f;   //VELOCIDAD DE LOS GLOBOS
            
               spawner.SetVelocidadGlobo(velocidadobjetivo);
            
@@ -105,8 +103,10 @@ public class Crtl_Objetivos_lvl2 : MonoBehaviour
              
             if(contador_tiempo_entre_globos >= 10.0f){
 
-              tiempo_entre_globos = tiempo_entre_globos - 0.1f;  
+              tiempo_entre_globos = tiempo_entre_globos - 0.1f;  //CANTIDAD DE GLOBOS
            
+              Debug.Log("tiempo entre globos " + tiempo_entre_globos.ToString());
+              
               spawner.setTiempoEntreGlobos(tiempo_entre_globos);
            
               contador_tiempo_entre_globos = 0f;
@@ -116,7 +116,8 @@ public class Crtl_Objetivos_lvl2 : MonoBehaviour
               {
                
                   ctr.desbloquearNivel();   
-               }
+               
+              }
 
 
     }
@@ -130,15 +131,8 @@ public class Crtl_Objetivos_lvl2 : MonoBehaviour
     public void incrementarPuntaje(string type_globo)
     {
         
-    if(currentObj == 1){ //OBJETIVO  EXPLOTAR TODOS.
      
-        Puntaje_t++;
-        puntaje_total.text = Puntaje_t.ToString();  
-     
-
-    } //FIN OBJETIVO 1
-     
-  }
+    }
 
    private void pararSpawn(){  //le digo 
         spawner.stopSpawnforMoment();
@@ -147,6 +141,7 @@ public class Crtl_Objetivos_lvl2 : MonoBehaviour
 
     public void Fail(){ //PERDI EL JUEGO
  
+        ctr.VolverMenu();
 
     }
 
