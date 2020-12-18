@@ -56,12 +56,15 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\scripts\CtrScene.cs" />
+     <Compile Include="Assets\scripts\FinGlobos.cs" />
+     <Compile Include="Assets\scripts\FinNubes.cs" />
      <Compile Include="Assets\scripts\FinSonido.cs" />
      <Compile Include="Assets\scripts\Finobjetivo.cs" />
      <Compile Include="Assets\scripts\finexp.cs" />
      <Compile Include="Assets\scripts\globo_explot.cs" />
      <Compile Include="Assets\scripts\globo_move.cs" />
      <Compile Include="Assets\scripts\lvl1\Crtl_Objetivos_lvl1.cs" />
+     <Compile Include="Assets\scripts\lvl1\animacionReloj.cs" />
      <Compile Include="Assets\scripts\lvl1\globo_spawn_lvl1.cs" />
      <Compile Include="Assets\scripts\lvl2\Crtl_Objetivos_lvl2.cs" />
      <Compile Include="Assets\scripts\lvl2\CtrEstrellaFugaz.cs" />

@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 173210520}
   - component: {fileID: 173210522}
   - component: {fileID: 173210521}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: espacio (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 238557987}
   - component: {fileID: 238557986}
   - component: {fileID: 238557985}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,8 +261,8 @@ Canvas:
   m_GameObject: {fileID: 238557984}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1326457674}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -271,7 +271,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &238557988
 RectTransform:
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 397821407}
   - component: {fileID: 397821409}
   - component: {fileID: 397821408}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: espacio (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 456420782}
   - component: {fileID: 456420781}
   - component: {fileID: 456420783}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LH (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 520426788}
   - component: {fileID: 520426787}
   - component: {fileID: 520426790}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Noche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -629,7 +629,7 @@ GameObject:
   - component: {fileID: 669739812}
   - component: {fileID: 669739814}
   - component: {fileID: 669739813}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: espacio (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -702,7 +702,7 @@ GameObject:
   - component: {fileID: 729917803}
   - component: {fileID: 729917805}
   - component: {fileID: 729917804}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -779,7 +779,7 @@ GameObject:
   - component: {fileID: 790987991}
   - component: {fileID: 790987993}
   - component: {fileID: 790987992}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -858,7 +858,7 @@ GameObject:
   - component: {fileID: 959504609}
   - component: {fileID: 959504608}
   - component: {fileID: 959504611}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Atardecer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1006,7 +1006,7 @@ GameObject:
   - component: {fileID: 997735289}
   - component: {fileID: 997735291}
   - component: {fileID: 997735290}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: espacio (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1079,7 +1079,7 @@ GameObject:
   - component: {fileID: 1001013622}
   - component: {fileID: 1001013624}
   - component: {fileID: 1001013623}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1153,7 +1153,7 @@ GameObject:
   - component: {fileID: 1065075305}
   - component: {fileID: 1065075307}
   - component: {fileID: 1065075306}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: espacio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1226,7 +1226,7 @@ GameObject:
   - component: {fileID: 1205004138}
   - component: {fileID: 1205004140}
   - component: {fileID: 1205004139}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1303,7 +1303,7 @@ GameObject:
   - component: {fileID: 1264319771}
   - component: {fileID: 1264319773}
   - component: {fileID: 1264319772}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: espacio (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1377,7 +1377,7 @@ GameObject:
   - component: {fileID: 1306612973}
   - component: {fileID: 1306612972}
   - component: {fileID: 1306612974}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1501,6 +1501,7 @@ MonoBehaviour:
   - {fileID: 959504608}
   - {fileID: 520426787}
   - {fileID: 2116371691}
+  nubes: {fileID: 7641106489173356236, guid: 6af30b411473bcb419a95790292513bb, type: 3}
 --- !u!4 &1316159728
 Transform:
   m_ObjectHideFlags: 0
@@ -1592,7 +1593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326457672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1675,7 +1676,7 @@ GameObject:
   - component: {fileID: 1402663968}
   - component: {fileID: 1402663970}
   - component: {fileID: 1402663969}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1755,7 +1756,7 @@ GameObject:
   - component: {fileID: 1405698018}
   - component: {fileID: 1405698017}
   - component: {fileID: 1405698019}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LH (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1857,7 +1858,7 @@ GameObject:
   - component: {fileID: 1640727332}
   - component: {fileID: 1640727331}
   - component: {fileID: 1640727330}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: LV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1960,7 +1961,7 @@ GameObject:
   - component: {fileID: 2014740359}
   m_Layer: 0
   m_Name: tituloyFondoopciones
-  m_TagString: Untagged
+  m_TagString: fondo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2023,8 +2024,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014740358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04, y: -0.17, z: 0}
-  m_LocalScale: {x: 1.154825, y: 1.4483496, z: 1}
+  m_LocalPosition: {x: -0.04, y: -0.049, z: -0.65}
+  m_LocalScale: {x: 1.154825, y: 1.4833055, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -2041,7 +2042,7 @@ GameObject:
   - component: {fileID: 2116371693}
   - component: {fileID: 2116371692}
   - component: {fileID: 2116371691}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: '?'
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class CtrScene : MonoBehaviour
-{
+public class CtrScene : MonoBehaviour{
     static public int NivelesDesbloqueado = 0;
     public int NivelActual = 0;
     public Button[] botones;
+    public GameObject nubes;
+    private int nivel = 0;
+
 
     private void Start()
     {
@@ -16,16 +18,30 @@ public class CtrScene : MonoBehaviour
             ActualizarBotones();
         }
     }
-    public void CambiarNivel(int nivel) {
 
-        if (nivel > 0)
-        {
-            SceneManager.LoadScene("Nivel" + nivel);
-        }
-        else
-            SceneManager.LoadScene("Menu");
+    public void trans(){
+
+      Instantiate(nubes); 
 
     }
+
+    public void CambiarNivel(int niv) {
+        //instancio transicion (Nubes)
+        this.nivel = niv;
+        Instantiate(nubes);   
+        Invoke("Transicion", 1.0f); 
+    }
+   
+     void Transicion(){
+    
+            if (nivel > 0)
+            {
+                SceneManager.LoadScene("Nivel" + nivel);
+            }
+            else
+                SceneManager.LoadScene("Menu");            
+     }
+
     public void VolverMenu()
     {
         CambiarNivel(0);
@@ -51,5 +67,7 @@ public class CtrScene : MonoBehaviour
         }
 
     }
+
+
 }
   

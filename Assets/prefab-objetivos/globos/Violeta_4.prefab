@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 50323433992217038}
   - component: {fileID: 114554582997043172}
   - component: {fileID: 61167254126299378}
+  - component: {fileID: 4948523752306826102}
   m_Layer: 0
   m_Name: Violeta_4
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 4a15801133941ad44ba9ba771d4acf84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -160,3 +161,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3.8}
   m_EdgeRadius: 0
+--- !u!114 &4948523752306826102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132503741610446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d357ff8bb791de40b5b40dab42c3e07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

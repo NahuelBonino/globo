@@ -13,7 +13,8 @@ public class Finobjetivo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (contador >= 3.0f) {
+        contador += Time.deltaTime;
+        if (contador >= 4.0f) {
 
             Destroy(gameObject);
 

@@ -21,7 +21,7 @@ public class PerdiNivel : MonoBehaviour
 
 
     void OnTriggerEnter2D(Collider2D col){
-        Debug.Log("GameObject1 collided with " + col.name);
+        
         ctrl2.Fail();
     }
 
