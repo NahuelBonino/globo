@@ -15,7 +15,7 @@ public class FinGlobos : MonoBehaviour
     {
         contadorvida+=Time.deltaTime;
 
-        if(contadorvida>=10.0f){
+        if(contadorvida>=15.0f){
 
             Destroy(this.gameObject);
 

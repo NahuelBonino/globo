@@ -35,7 +35,6 @@ public class globo_explot : MonoBehaviour
         }
         else if (lvl==2){
         Destroy(gameObject);
-        Crtl_Objetivos_lvl2.getInstance().incrementarPuntaje(gameObject.name);
         Instantiate(sound);
         Quaternion q = new Quaternion();
         Instantiate(exp,t.position,q);

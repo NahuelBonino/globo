@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\scripts\CargarYGuardar.cs" />
      <Compile Include="Assets\scripts\CtrScene.cs" />
      <Compile Include="Assets\scripts\FinGlobos.cs" />
      <Compile Include="Assets\scripts\FinNubes.cs" />

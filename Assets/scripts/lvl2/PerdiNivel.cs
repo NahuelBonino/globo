@@ -20,8 +20,7 @@ public class PerdiNivel : MonoBehaviour
     }
 
 
-    void OnTriggerEnter2D(Collider2D col){
-        
+    void OnTriggerEnter2D(Collider2D col){       
         ctrl2.Fail();
     }
 

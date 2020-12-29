@@ -14,6 +14,7 @@ public class globo_spawn_lvl2 : MonoBehaviour
     float contador_nivel;
     float contador_esperar;
     float velocidadGlobosp;
+    float tiempomuerto;
 
     public float tiempo_entre_globo;
     
@@ -23,17 +24,18 @@ public class globo_spawn_lvl2 : MonoBehaviour
     {
         cont_normal = 0f;
         parar = true; 
-        velocidadGlobosp = 1.0f;  
+        velocidadGlobosp = 1.3f;  
         tiempo_entre_globo = 2.0f;
+        tiempomuerto = 0;
     }
 
     // Update is called once per frame
-    public void setTiempoEntreGlobos(float tiempo){
-        Debug.Log("tiempo entre globos " + tiempo.ToString());
+    public void setTiempoEntreGlobos(float tiempo){      
         tiempo_entre_globo = tiempo;
     }
     
-    public void stopSpawnforMoment(){
+    public void stopSpawnforMoment(int t){
+      tiempomuerto = t;
       parar = true;
     }
     public void SetVelocidadGlobo(float velocidad){
@@ -42,7 +44,7 @@ public class globo_spawn_lvl2 : MonoBehaviour
     }
 
     IEnumerator stopReallySpawn(){       
-         yield return new WaitForSeconds (1.0f);    
+         yield return new WaitForSeconds (tiempomuerto);    
          parar = false;
     }
 
@@ -51,37 +53,38 @@ public class globo_spawn_lvl2 : MonoBehaviour
     {        
        if (!parar){
 
-           cont_normal = cont_normal + Time.deltaTime;
+           cont_normal += Time.deltaTime;
         //   cont_especial = cont_especial + Time.deltaTime;
-        if(Crtl_Objetivos_lvl2.getInstance().getCurrentObj()==1){ // Globos del objetivo 1
+           if(Crtl_Objetivos_lvl2.getInstance().getCurrentObj()==1){ // Globos del objetivo 1
+                    
+                if (cont_normal >= tiempo_entre_globo){
+                     Debug.Log("tiempo entre globos " + tiempo_entre_globo.ToString());
+                    Ran = Random.Range(-2.7f, 2.7f);
+                    int Ran2 = Random.Range(0,cant_globosObj1);
+                // print(Ran2);
+                    Quaternion q = new Quaternion();
+                    GameObject globo = Instantiate(globosObj1[Ran2],new Vector3(Ran,GetComponent<Transform>().position.y,1f),q);
+                    globo_explot ge = globo.GetComponent(typeof(globo_explot)) as globo_explot;
+                    ge.setLvl(2); //le aviso que es el nivel 2
+                    globo.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, velocidadGlobosp),UnityEngine.ForceMode2D.Impulse); //instancio y agrego velocidad
+                    cont_normal = 0f;
+                    globo.GetComponent<BoxCollider2D>().isTrigger = true;
+                }
                 
-            if (cont_normal >= tiempo_entre_globo){
+            }           
+                /*if (cont_especial >= 5.0f){ //GLOBO ESPECIAL (EXPLOSION MULTIPLE)
 
-                Ran = Random.Range(-3f, 3f);
-                int Ran2 = Random.Range(0,cant_globosObj1);
-               // print(Ran2);
-                Quaternion q = new Quaternion();
-                GameObject globo = Instantiate(globosObj1[Ran2],new Vector3(Ran,GetComponent<Transform>().position.y,1f),q);
-                globo_explot ge = globo.GetComponent(typeof(globo_explot)) as globo_explot;
-                ge.setLvl(2); //le aviso que es el nivel 2
-                globo.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, velocidadGlobosp),UnityEngine.ForceMode2D.Impulse); //instancio y agrego velocidad
-                cont_normal = 0f;
-              }
-            
-        }           
-            /*if (cont_especial >= 5.0f){ //GLOBO ESPECIAL (EXPLOSION MULTIPLE)
+                    Ran = Random.Range(-3f, 3f);               
+                // print(Ran2);
+                    Quaternion q = new Quaternion();
+                    Instantiate(globo_especial,new Vector3(Ran,GetComponent<Transform>().position.y,1f),q);
+                    cont_especial = 0;
 
-                Ran = Random.Range(-3f, 3f);               
-               // print(Ran2);
-                Quaternion q = new Quaternion();
-                Instantiate(globo_especial,new Vector3(Ran,GetComponent<Transform>().position.y,1f),q);
-                cont_especial = 0;
-
-            }*/
+                }*/
 
         }
           
-          else{
+        else{
 
              stopReallySpawn();
              parar = false; 
@@ -97,7 +100,7 @@ public class globo_spawn_lvl2 : MonoBehaviour
             Instantiate(globo_especial, new Vector3(Ran, -7f, 0f), q);
             cont_especial = 0;
         }*/
-      }
+    }
       
 
     

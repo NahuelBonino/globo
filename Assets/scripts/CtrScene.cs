@@ -5,18 +5,33 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class CtrScene : MonoBehaviour{
-    static public int NivelesDesbloqueado = 0;
-    public int NivelActual = 0;
+   
+    static public int nivelesDesbloqueados;
+    public int NivelActual;
     public Button[] botones;
     public GameObject nubes;
     private int nivel = 0;
+    CargarYGuardar cyg;
+    
+ //   private static CtrScene instance;//instancia del singleton
 
+    void Awake (){ //SINGLETON
+   
+        cyg = GetComponent<CargarYGuardar>();
+       
+     }
 
     private void Start()
     {
         if (SceneManager.GetActiveScene().name.Equals("Menu")) {
-            ActualizarBotones();
+            // print("niveles desbloqueados " + nivelesDesbloqueados.ToString());
+             cyg.Guardar();
+             ActualizarBotones();
         }
+    //lvl1 = GameObject.Find("Atardecer").GetComponent (typeof(Button)) as Button;       
+   // lvl2 = GameObject.Find("Noche").GetComponent(typeof(Button)) as Button;            
+   // lvl3 = GameObject.Find("?").GetComponent(typeof(Button)) as Button; 
+               
     }
 
     public void trans(){
@@ -39,7 +54,8 @@ public class CtrScene : MonoBehaviour{
                 SceneManager.LoadScene("Nivel" + nivel);
             }
             else
-                SceneManager.LoadScene("Menu");            
+                SceneManager.LoadScene("Menu");
+                ActualizarBotones();            
      }
 
     public void VolverMenu()
@@ -50,24 +66,32 @@ public class CtrScene : MonoBehaviour{
 
     public void desbloquearNivel() {
         NivelActual++;
-        if (NivelesDesbloqueado < NivelActual) {
-            NivelesDesbloqueado = NivelActual;
+        print("nivel actual " + NivelActual.ToString());
+        if (nivelesDesbloqueados < NivelActual) {
+            nivelesDesbloqueados = NivelActual;
         }     
         VolverMenu();
     }
 
     public void ActualizarBotones()
     {
-
-        for (int i = 0; i <= NivelesDesbloqueado; i++)
+       // obtenerBotones();
+        print(nivelesDesbloqueados.ToString());
+        for (int i = 0; i <= nivelesDesbloqueados; i++)
         {
-
             botones[i].interactable = true;
-
         }
 
     }
 
+
+    /*public void obtenerBotones(){
+                  
+        for (int i = 0; i <= cant_niveles-1; i++){
+            botones[i] = GameObject.Find(i.ToString()).GetComponent (typeof(Button)) as Button; 
+       } 
+
+    }*/
 
 }
   

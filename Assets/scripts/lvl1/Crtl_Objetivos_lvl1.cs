@@ -30,7 +30,7 @@ public class Crtl_Objetivos_lvl1 : MonoBehaviour
     public int currentObj;
     public bool primer_globo_explotado;
     private bool instanciaron_artilujios_obj2;
-
+    private bool fin_juego = false;
     private globo_spawn_lvl1 spawner;
 
     public globo_move gm; //Script que pone la velocidad del Globo.
@@ -46,21 +46,20 @@ public class Crtl_Objetivos_lvl1 : MonoBehaviour
            // DontDestroyOnLoad(this.gameObject);
 
             //Rest of your Awake code
+            ctr = GameObject.Find("CtrScene").GetComponent (typeof(CtrScene)) as CtrScene;
+            puntaje_rojo = GameObject.Find("puntaje_rojo").GetComponent(typeof(Text)) as Text;
+            puntaje_violeta = GameObject.Find("puntaje_violeta").GetComponent(typeof(Text)) as Text;
+            globito_rojo = GameObject.Find("rojo").GetComponent(typeof(Image)) as Image;
+            globito_violeta = GameObject.Find("violeta").GetComponent(typeof(Image)) as Image;
+            tiempo_limite =  GameObject.Find("tiempo_limite").GetComponent(typeof(Text)) as Text;
+            spawner =  GameObject.Find("spawner").GetComponent(typeof(globo_spawn_lvl1)) as globo_spawn_lvl1;
 
         }
         else
         {
             Destroy(this);
         }
-        ctr = GameObject.Find("CtrScene").GetComponent (typeof(CtrScene)) as CtrScene;
-        puntaje_rojo = GameObject.Find("puntaje_rojo").GetComponent(typeof(Text)) as Text;
-        puntaje_violeta = GameObject.Find("puntaje_violeta").GetComponent(typeof(Text)) as Text;
-        globito_rojo = GameObject.Find("rojo").GetComponent(typeof(Image)) as Image;
-        globito_violeta = GameObject.Find("violeta").GetComponent(typeof(Image)) as Image;
-       // reloj = GameObject.Find("reloj").GetComponent(typeof(Image)) as Image;
-        //tiempo = GameObject.Find("tiempo").GetComponent(typeof(Image)) as Image;
-        tiempo_limite =  GameObject.Find("tiempo_limite").GetComponent(typeof(Text)) as Text;
-        spawner =  GameObject.Find("spawner").GetComponent(typeof(globo_spawn_lvl1)) as globo_spawn_lvl1;
+
         
     }
 
@@ -75,7 +74,7 @@ public class Crtl_Objetivos_lvl1 : MonoBehaviour
         tiempo_lim_obj2 = 40.0f; // TIEMPO LIMITE DEL OBJETIVO 2
         Puntos_obj_1 = 15; //PUNTOS DEL OBJETIVO1
         iluminacionActual = 0;
-        iluminacion_objetivo = 25;
+        iluminacion_objetivo = 5;
         primer_globo_explotado = false;
         instanciaron_artilujios_obj2 = false;
     }
@@ -188,14 +187,15 @@ public class Crtl_Objetivos_lvl1 : MonoBehaviour
                 Barracolores.gameObject.GetComponent<Scrollbar>().size = iluminacionActual/25.0f;
                 }
                 //print(Barracolores.gameObject.GetComponent<Scrollbar>().size);
-                if(iluminacionActual>=iluminacion_objetivo){ //GANEEEE!
+                if(iluminacionActual>=iluminacion_objetivo && !fin_juego){ //GANEEEE!
                     pararSpawn(10);
                    // Destroy(Barracolores.gameObject); 
                     DestroyImmediate(objBarra.gameObject,true);                    
                     reloj.color = new Color(0,0,0,0);
                     tiempo.color = new Color(0,0,0,0); 
-                    tiempo_limite.gameObject.SetActive(false);               
-                    Invoke("lvlWin",0.0f);            
+                    tiempo_limite.gameObject.SetActive(false); 
+                    fin_juego = true;              
+                    lvlWin();            
                 }
            
             }
