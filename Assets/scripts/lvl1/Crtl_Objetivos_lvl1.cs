@@ -32,8 +32,6 @@ public class Crtl_Objetivos_lvl1 : MonoBehaviour
     private bool instanciaron_artilujios_obj2;
     private bool fin_juego = false;
     private globo_spawn_lvl1 spawner;
-
-    public globo_move gm; //Script que pone la velocidad del Globo.
     private Canvas objBarra;
     public int Puntos_obj_1;
     void Awake()

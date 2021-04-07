@@ -54,7 +54,7 @@ public class globo_spawn_lvl2 : MonoBehaviour
        if (!parar){
 
            cont_normal += Time.deltaTime;
-        //   cont_especial = cont_especial + Time.deltaTime;
+           //cont_especial = cont_especial + Time.deltaTime;
            if(Crtl_Objetivos_lvl2.getInstance().getCurrentObj()==1){ // Globos del objetivo 1
                     
                 if (cont_normal >= tiempo_entre_globo){
@@ -72,16 +72,15 @@ public class globo_spawn_lvl2 : MonoBehaviour
                 }
                 
             }           
-                /*if (cont_especial >= 5.0f){ //GLOBO ESPECIAL (EXPLOSION MULTIPLE)
+                if (cont_especial == 0) /*15.0f*/{ //GLOBO ESPECIAL (EXPLOSION MULTIPLE)
 
-                    Ran = Random.Range(-3f, 3f);               
-                // print(Ran2);
+                    Ran = Random.Range(-2f, 2f);               
                     Quaternion q = new Quaternion();
-                    Instantiate(globo_especial,new Vector3(Ran,GetComponent<Transform>().position.y,1f),q);
-                    cont_especial = 0;
+                    GameObject globoesp  = Instantiate(globo_especial,new Vector3(Ran,GetComponent<Transform>().position.y,1f),q);
+                    globoesp.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, velocidadGlobosp),UnityEngine.ForceMode2D.Impulse); //instancio y agrego velocidad
+                    cont_especial = 1;
 
-                }*/
-
+                }
         }
           
         else{

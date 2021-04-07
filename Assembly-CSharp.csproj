@@ -55,23 +55,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\scripts\CargarYGuardar.cs" />
-     <Compile Include="Assets\scripts\CtrScene.cs" />
-     <Compile Include="Assets\scripts\FinGlobos.cs" />
-     <Compile Include="Assets\scripts\FinNubes.cs" />
-     <Compile Include="Assets\scripts\FinSonido.cs" />
-     <Compile Include="Assets\scripts\Finobjetivo.cs" />
-     <Compile Include="Assets\scripts\finexp.cs" />
-     <Compile Include="Assets\scripts\globo_explot.cs" />
-     <Compile Include="Assets\scripts\globo_move.cs" />
-     <Compile Include="Assets\scripts\lvl1\Crtl_Objetivos_lvl1.cs" />
-     <Compile Include="Assets\scripts\lvl1\animacionReloj.cs" />
-     <Compile Include="Assets\scripts\lvl1\globo_spawn_lvl1.cs" />
-     <Compile Include="Assets\scripts\lvl2\Crtl_Objetivos_lvl2.cs" />
-     <Compile Include="Assets\scripts\lvl2\CtrEstrellaFugaz.cs" />
-     <Compile Include="Assets\scripts\lvl2\FinEstrellaFugaz.cs" />
-     <Compile Include="Assets\scripts\lvl2\PerdiNivel.cs" />
-     <Compile Include="Assets\scripts\lvl2\globo_spawn_lvl2.cs" />
+     <Compile Include="Assets\Scripts\CargarYGuardar.cs" />
+     <Compile Include="Assets\Scripts\CtrScene.cs" />
+     <Compile Include="Assets\Scripts\ExplotEspacial.cs" />
+     <Compile Include="Assets\Scripts\FinGlobos.cs" />
+     <Compile Include="Assets\Scripts\FinNubes.cs" />
+     <Compile Include="Assets\Scripts\FinSonido.cs" />
+     <Compile Include="Assets\Scripts\Finobjetivo.cs" />
+     <Compile Include="Assets\Scripts\finexp.cs" />
+     <Compile Include="Assets\Scripts\globoEspMove.cs" />
+     <Compile Include="Assets\Scripts\globo_explot.cs" />
+     <Compile Include="Assets\Scripts\lvl1\Crtl_Objetivos_lvl1.cs" />
+     <Compile Include="Assets\Scripts\lvl1\animacionReloj.cs" />
+     <Compile Include="Assets\Scripts\lvl1\globo_spawn_lvl1.cs" />
+     <Compile Include="Assets\Scripts\lvl2\Crtl_Objetivos_lvl2.cs" />
+     <Compile Include="Assets\Scripts\lvl2\CtrEstrellaFugaz.cs" />
+     <Compile Include="Assets\Scripts\lvl2\FinEstrellaFugaz.cs" />
+     <Compile Include="Assets\Scripts\lvl2\PerdiNivel.cs" />
+     <Compile Include="Assets\Scripts\lvl2\globo_spawn_lvl2.cs" />
+     <Compile Include="Assets\Scripts\lvl3\Crtl_Objetivos_lvl3.cs" />
+     <Compile Include="Assets\Scripts\lvl3\Zona.cs" />
+     <Compile Include="Assets\Scripts\lvl3\globo_spawn_lvl3.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/User/globo/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
