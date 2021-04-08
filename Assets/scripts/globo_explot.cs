@@ -20,13 +20,16 @@ public class globo_explot : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (lvl==1){
-        Crtl_Objetivos_lvl1.getInstance().incrementarPuntaje(gameObject.name);
+        if (lvl==1){ //SI ES EL LVL1
+            Crtl_Objetivos_lvl1.getInstance().incrementarPuntaje(gameObject.name);
             explot();
         }
-        else if (lvl==2){
+        else if (lvl==2){ //SI ES EL LVL2 
             explot();
         }
+        else if (lvl==3){ //SI ES EL LVL3 
+            explot();
+        }       
 
     }
 

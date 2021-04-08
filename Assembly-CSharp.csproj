@@ -71,11 +71,16 @@
      <Compile Include="Assets\Scripts\lvl2\Crtl_Objetivos_lvl2.cs" />
      <Compile Include="Assets\Scripts\lvl2\CtrEstrellaFugaz.cs" />
      <Compile Include="Assets\Scripts\lvl2\FinEstrellaFugaz.cs" />
-     <Compile Include="Assets\Scripts\lvl2\PerdiNivel.cs" />
+     <Compile Include="Assets\Scripts\lvl2\PerdiNivel2.cs" />
      <Compile Include="Assets\Scripts\lvl2\globo_spawn_lvl2.cs" />
      <Compile Include="Assets\Scripts\lvl3\Crtl_Objetivos_lvl3.cs" />
+     <Compile Include="Assets\Scripts\lvl3\PerdiNivel3.cs" />
      <Compile Include="Assets\Scripts\lvl3\Zona.cs" />
      <Compile Include="Assets\Scripts\lvl3\globo_spawn_lvl3.cs" />
+     <Compile Include="Assets\Scripts\lvl4\Crtl_Objetivos_lvl4.cs" />
+     <Compile Include="Assets\Scripts\lvl4\PerdiNivel4.cs" />
+     <Compile Include="Assets\Scripts\lvl4\Print_desp.cs" />
+     <Compile Include="Assets\Scripts\lvl4\globo_spawn_lvl4.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/User/globo/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

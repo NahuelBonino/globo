@@ -61,11 +61,10 @@ public class globo_spawn_lvl3 : MonoBehaviour
                      Debug.Log("tiempo entre globos " + tiempo_entre_globo.ToString());
                     Ran = Random.Range(-2.7f, 2.7f);
                     int Ran2 = Random.Range(0,cant_globosObj1);
-                // print(Ran2);
                     Quaternion q = new Quaternion();
                     GameObject globo = Instantiate(globosObj1[Ran2],new Vector3(Ran,GetComponent<Transform>().position.y,1f),q);
                     globo_explot ge = globo.GetComponent(typeof(globo_explot)) as globo_explot;
-                    ge.setLvl(2); //le aviso que es el nivel 2
+                    ge.setLvl(3); //le aviso que es el nivel 3
                     globo.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, velocidadGlobosp),UnityEngine.ForceMode2D.Impulse); //instancio y agrego velocidad
                     cont_normal = 0f;
                     globo.GetComponent<BoxCollider2D>().isTrigger = true;
@@ -91,15 +90,6 @@ public class globo_spawn_lvl3 : MonoBehaviour
           
             }
           
-          // Globos del objetivo 2
-       
-       /* if (cont_especial >= 4f) {
-
-            Ran = Random.Range(-3f, 3f);
-            Quaternion q = new Quaternion();
-            Instantiate(globo_especial, new Vector3(Ran, -7f, 0f), q);
-            cont_especial = 0;
-        }*/
     }
       
 

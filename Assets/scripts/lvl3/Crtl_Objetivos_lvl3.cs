@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class Crtl_Objetivos_lvl3 : MonoBehaviour
 {
     public Canvas obj1;
-
     private float contador_descuento;
     private static Crtl_Objetivos_lvl3 instance;
     public float tiempo_lim_obj1;

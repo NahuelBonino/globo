@@ -77,11 +77,10 @@ public class CtrScene : MonoBehaviour{
     {
        // obtenerBotones();
         print(nivelesDesbloqueados.ToString());
-        for (int i = 0; i <= nivelesDesbloqueados; i++)
-        {
+        for (int i = 0; i <= nivelesDesbloqueados; i++){
             botones[i].interactable = true;
         }
-
+        botones[3].interactable = true;
     }
 
 

@@ -26,8 +26,13 @@ public class globoEspMove : MonoBehaviour{
         cont += Time.deltaTime;
         if (cont >= 0.05f){
 
-            Vector3 temp = new Vector3(movhor,0,0);
-            transform.position += temp;   
+            Vector3 tempPosition = new Vector3(movhor,0,0);
+           // Vector3 tempRotation = new Vector3(0,0,movhor);
+            transform.position += tempPosition;   
+            var rot = transform.rotation;
+            rot.z += Time.deltaTime * (-1) * movhor * 10;
+            transform.rotation = rot;
+
             if (aumento<0.5f && !izq){ //hasta que no llegue a determinado aumento no paro
             
               movhor = 0.05f;
