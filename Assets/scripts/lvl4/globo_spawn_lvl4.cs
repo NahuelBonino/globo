@@ -17,6 +17,8 @@ public class globo_spawn_lvl4 : MonoBehaviour
     float tiempomuerto;
 
     public float tiempo_entre_globo;
+
+    private float cont;
     
     
     bool parar;
@@ -27,6 +29,8 @@ public class globo_spawn_lvl4 : MonoBehaviour
         velocidadGlobosp = 1.3f;  
         tiempo_entre_globo = 2.0f;
         tiempomuerto = 0;
+        cont = 0;
+        cant_globosObj1 = 4;
     }
 
     // Update is called once per frame
@@ -54,20 +58,22 @@ public class globo_spawn_lvl4 : MonoBehaviour
        if (!parar){
 
            cont_normal += Time.deltaTime;
+           cont += Time.deltaTime;
         //   cont_especial = cont_especial + Time.deltaTime;
-           if(Crtl_Objetivos_lvl3.getInstance().getCurrentObj()==1){ // Globos del objetivo 1
+           if(Crtl_Objetivos_lvl4.getInstance().getCurrentObj()==1){ // Globos del objetivo 1
                     
                 if (cont_normal >= tiempo_entre_globo){
-                     Debug.Log("tiempo entre globos " + tiempo_entre_globo.ToString());
+                     //Debug.Log("tiempo entre globos " + tiempo_entre_globo.ToString());
                     Ran = Random.Range(-2.7f, 2.7f);
                     int Ran2 = Random.Range(0,cant_globosObj1);
                     Quaternion q = new Quaternion();
                     GameObject globo = Instantiate(globosObj1[Ran2],new Vector3(Ran,GetComponent<Transform>().position.y,1f),q);
+                    globo.name = "" + cont;
                     globo_explot ge = globo.GetComponent(typeof(globo_explot)) as globo_explot;
-                    ge.setLvl(3); //le aviso que es el nivel 3
+                    ge.setLvl(4); //le aviso que es el nivel 
                     globo.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, velocidadGlobosp),UnityEngine.ForceMode2D.Impulse); //instancio y agrego velocidad
                     cont_normal = 0f;
-                    globo.GetComponent<BoxCollider2D>().isTrigger = true;
+                    globo.GetComponent<CircleCollider2D>().isTrigger = true;
                 }
                 
             }           

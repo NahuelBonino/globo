@@ -49,7 +49,7 @@ public class Crtl_Objetivos_lvl4 : MonoBehaviour
 
     void Start()
     {       
-        Instantiate(obj1); //INSTANCIO AL PRINCIPIO EL OBJETIVO 1
+      //  Instantiate(obj1); //INSTANCIO AL PRINCIPIO EL OBJETIVO 1
         currentObj = 1; // OBJETIVO ACTUAL 1
         tiempo_lim_obj1 = 150.0f; // TIEMPO LIMITE DEL OBJETIVO 2
         contador_velocidad = 0f;
@@ -68,7 +68,7 @@ public class Crtl_Objetivos_lvl4 : MonoBehaviour
     {
             //BAJO EL CONTADOR DEL OBJETIVO 2
           
-            tiempo_lim_obj1  -=  Time.deltaTime;
+         /*   tiempo_lim_obj1  -=  Time.deltaTime;
            
             contador_descuento += Time.deltaTime;
                                     
@@ -107,7 +107,7 @@ public class Crtl_Objetivos_lvl4 : MonoBehaviour
                
               }
 
-
+*/
     }
 
 

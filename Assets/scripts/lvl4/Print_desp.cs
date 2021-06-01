@@ -25,14 +25,14 @@ public class Print_desp : MonoBehaviour
          if (Input.touchCount > 0){
 
               Touch touch = Input.GetTouch(0);
-              if (touch.phase == TouchPhase.Began|| Input.GetMouseButtonDown(0)){
-
-                 // float X = (touch.position.x ) / width;
-                 // float Y = (touch.position.y ) / height;
-                 // Debug.Log(X + " " + Y);
+              if (touch.phase == TouchPhase.Began){
+                 String text = "Touch Position : " + touch.position;
+                 Debug.Log(text); 
+                 this.transform.position = new Vector3(touch.position.x/100,touch.position.y/100,-37);
                  Quaternion q = new Quaternion();
                  TheTrail = (GameObject)Instantiate(drawPrefab,this.transform.position,q); //instancio algo que simule pintar la pantalla
                  Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);   
+                  
                  float _dis;
                  if (PlaneObj.Raycast(mouseRay, out _dis)){
 

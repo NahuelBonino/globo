@@ -78,8 +78,12 @@
      <Compile Include="Assets\Scripts\lvl3\Zona.cs" />
      <Compile Include="Assets\Scripts\lvl3\globo_spawn_lvl3.cs" />
      <Compile Include="Assets\Scripts\lvl4\Crtl_Objetivos_lvl4.cs" />
+     <Compile Include="Assets\Scripts\lvl4\FollowCamera.cs" />
+     <Compile Include="Assets\Scripts\lvl4\Move_arrow_left.cs" />
+     <Compile Include="Assets\Scripts\lvl4\Move_arrow_right.cs" />
      <Compile Include="Assets\Scripts\lvl4\PerdiNivel4.cs" />
      <Compile Include="Assets\Scripts\lvl4\Print_desp.cs" />
+     <Compile Include="Assets\Scripts\lvl4\Punta_explot.cs" />
      <Compile Include="Assets\Scripts\lvl4\globo_spawn_lvl4.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/User/globo/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
